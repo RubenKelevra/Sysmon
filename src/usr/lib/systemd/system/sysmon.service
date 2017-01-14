@@ -1,0 +1,12 @@
+[Unit]
+Description=Sysmon server monitoring service
+After=syslog.target network.target
+
+[Service]
+Type=notify #FIXME implement systemd-notify
+ExecStart=/usr/bin/sysmon
+Restart=always
+RestartSec=30
+
+[Install]
+WantedBy=multi-user.target
